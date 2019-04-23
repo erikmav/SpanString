@@ -7,6 +7,8 @@
     <RootNamespace>OptimizedStrings</RootNamespace>
     <AssemblyName>SpanString</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols> 
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Version>0.1.0</Version>
     <Authors>Erik Mavrinac, https://github.com/erikma</Authors>

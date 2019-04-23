@@ -7,7 +7,7 @@ using System.Diagnostics.Contracts;
 namespace OptimizedStrings
 {
     /// <summary>
-    /// A view onto an underlying <see cref="String"/> that uses Span and Memory to avoid
+    /// A view onto all or a slice of an underlying <see cref="String"/> that uses Span and Memory to avoid
     /// creating a new String instance.
     /// </summary>
     public struct SpanString1 : ISpanString, IComparable<SpanString1>, IEquatable<SpanString1>

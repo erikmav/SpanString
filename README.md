@@ -1,5 +1,5 @@
 # SpanString
-SpanString is an optimized string data structure built from `Memory<char>` and `Span<char>` added in .NET Standard 2.1+ and .NET Core 3.0+. It allows you to gather string segments from the memory of other strings to act as a single string. This can be useful for applications where millions of strings are parsed and used as keys for dictionaries or other data structures, and memory pressure and GC overhead are an important concerns.
+SpanString is an optimized string data structure built from `Memory<char>` and `Span<char>` added in .NET Standard 2.1+ and .NET Core 3.0+. It allows you to gather string segments from the memory of other strings to act as a single string. This can be useful for applications where millions of strings are parsed and used as keys for dictionaries or other data structures, and memory pressure and GC overhead are important concerns.
 
 SpanString always uses ordinal string comparisons, and currently only handles ANSI for OrdinalIgnoreCase comparisons.
 
