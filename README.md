@@ -3,7 +3,7 @@ SpanString is an optimized string data structure built from `Memory<char>` and `
 
 SpanString always uses ordinal string comparisons, and currently only handles ANSI for OrdinalIgnoreCase comparisons.
 
-The release output of this repo generates the SpanString package on Nuget.org.
+The release output of this repo generates the [SpanString](https://www.nuget.org/packages/SpanString/) package on Nuget.org.
 
 ## Release Notes
 
