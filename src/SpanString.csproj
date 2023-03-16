@@ -20,7 +20,6 @@
     <RepositoryUrl>https://github.com/erikma/SpanString.git</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>.NET dotnet C# string span memory</PackageTags>
-    <PackageReleaseNotes>Initial release for testing performance and memory use versus strings in cases of reading and parsing millions of strings and creating substrings. Only contains SpanString1,2 allowing up to only 2 string segments to compose a SpanString.</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
