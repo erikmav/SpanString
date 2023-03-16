@@ -63,5 +63,6 @@ foreach (MyDatabaseRecord record in database.GetRecords())
 
 ## Release Notes
 
+* 0.2.1 Mar 2023: Add nullable annotations.
 * 0.2.0 Mar 2023: Retarget to .NET 6 only.
 * 0.1.0 Apr 2019: Initial release for testing performance and memory use versus strings in cases of reading and parsing millions of strings and creating substrings. Only contains SpanString1,2 allowing up to only 2 string segments to compose a SpanString.

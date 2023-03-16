@@ -67,14 +67,42 @@ public class SpanStringTests
     [TestMethod]
     public void SpanStringFactory()
     {
+        ISpanString ss0 = SpanString.Create();
+        Assert.IsInstanceOfType<SpanString1>(ss0);
+        Assert.AreEqual(0, ss0.Length);
+
+        ss0 = SpanString.Create((string[]?)null);
+        Assert.IsInstanceOfType<SpanString1>(ss0);
+        Assert.AreEqual(0, ss0.Length);
+
         ISpanString ss1 = SpanString.Create("abcdefg");
+        Assert.IsInstanceOfType<SpanString1>(ss1);
         Assert.AreEqual(7, ss1.Length);
 
         ISpanString ss2 = SpanString.Create("abc", "defg");
+        Assert.IsInstanceOfType<SpanString2>(ss2);
         Assert.AreEqual(7, ss2.Length);
+
+        ISpanString ss3 = SpanString.Create(new[] { "abcdefg" });
+        Assert.IsInstanceOfType<SpanString1>(ss3);
+        Assert.AreEqual(7, ss3.Length);
+
+        ISpanString ss4 = SpanString.Create(new[] { "abc", "defg" });
+        Assert.IsInstanceOfType<SpanString2>(ss4);
+        Assert.AreEqual(7, ss4.Length);
 
         Assert.AreEqual(ss1.GetHashCode(), ss2.GetHashCode());
         Assert.AreEqual(ss1.GetHashCodeIgnoreCase(), ss2.GetHashCodeIgnoreCase());
+        Assert.AreEqual(ss1.GetHashCode(), ss3.GetHashCode());
+        Assert.AreEqual(ss1.GetHashCodeIgnoreCase(), ss3.GetHashCodeIgnoreCase());
+        Assert.AreEqual(ss1.GetHashCode(), ss4.GetHashCode());
+        Assert.AreEqual(ss1.GetHashCodeIgnoreCase(), ss4.GetHashCodeIgnoreCase());
+        Assert.AreEqual(ss2.GetHashCode(), ss3.GetHashCode());
+        Assert.AreEqual(ss2.GetHashCodeIgnoreCase(), ss3.GetHashCodeIgnoreCase());
+        Assert.AreEqual(ss2.GetHashCode(), ss4.GetHashCode());
+        Assert.AreEqual(ss2.GetHashCodeIgnoreCase(), ss4.GetHashCodeIgnoreCase());
+        Assert.AreEqual(ss3.GetHashCode(), ss4.GetHashCode());
+        Assert.AreEqual(ss3.GetHashCodeIgnoreCase(), ss4.GetHashCodeIgnoreCase());
     }
 
     [TestMethod]

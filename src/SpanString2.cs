@@ -79,7 +79,7 @@ public struct SpanString2 : ISpanString, IComparable<SpanString2>, IEquatable<Sp
     /// </summary>
     /// <param name="obj">The other object or string to compare with this string.</param>
     /// <returns>True if the strings are equal.</returns>
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         if (obj is ISpanString ss)
         {

@@ -10,7 +10,7 @@
     <IncludeSymbols>true</IncludeSymbols> 
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <Authors>Erik Mavrinac</Authors>
     <Company />
     <Description>An optimized string data structure built from Memory&lt;char&gt; and Span&lt;char&gt; to reduce GC.</Description>

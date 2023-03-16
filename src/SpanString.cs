@@ -14,7 +14,7 @@ public static class SpanString
     /// Gets a SpanString containing only the empty string.
     /// </summary>
     /// <remarks>This is a boxed <see cref="SpanString1"/>.</remarks>
-    public static ISpanString Empty { get; } = new SpanString1("");
+    public static ISpanString Empty { get; } = new SpanString1(string.Empty);
 
     /// <summary>
     /// Factory method that creates a SpanString from a full string. The resulting
@@ -51,9 +51,9 @@ public static class SpanString
     /// The number of strings in <paramref name="strs"/> exceeds that which can be modeled
     /// by the current SpanString library.
     /// </exception>
-    public static ISpanString Create(params string[] strs)
+    public static ISpanString Create(params string[]? strs)
     {
-        if (strs == null)
+        if (strs is null || strs.Length == 0)
         {
             return Empty;
         }
@@ -68,6 +68,6 @@ public static class SpanString
             return new SpanString2(strs[0], strs[1]);
         }
 
-        throw new ArgumentException($"SpanStrings are currently only available with up to 2 segments");
+        throw new ArgumentException("SpanStrings are currently only available with up to 2 segments");
     }
 }

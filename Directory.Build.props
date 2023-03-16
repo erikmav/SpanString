@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <MSBuildTreatWarningsAsErrors>true</MSBuildTreatWarningsAsErrors>
+
+    <!--Using embedded pdb mode to improve diagnosing and debugging experience-->
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+</Project>

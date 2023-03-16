@@ -59,7 +59,7 @@ public class SpanStringComparer :
     /// <param name="a">The first string to compare.</param>
     /// <param name="b">The second string to compare.</param>
     /// <returns>True if the strings are equal.</returns>
-    public bool Equals(ISpanString a, ISpanString b)
+    public bool Equals(ISpanString? a, ISpanString? b)
     {
         // Find optimized comparison methods.
         if (a is SpanString1 a1)
@@ -74,7 +74,7 @@ public class SpanStringComparer :
                 return _ignoreCase ? SpanString1.EqualsIgnoreCase(a1, b2) : SpanString1.Equals(a1, b2);
             }
 
-            throw new ArgumentException($"Second param 'b' is an unknown SpanString type '{b.GetType().Name}', is this a bug?");
+            throw new ArgumentException($"Second param 'b' is an unknown SpanString type '{b?.GetType().Name}', is this a bug?");
         }
 
         if (a is SpanString2 a2)
@@ -89,10 +89,10 @@ public class SpanStringComparer :
                 return _ignoreCase ? SpanString2.EqualsIgnoreCase(a2, b2) : SpanString2.Equals(a2, b2);
             }
 
-            throw new ArgumentException($"Second param 'b' is an unknown SpanString type '{b.GetType().Name}', is this a bug?");
+            throw new ArgumentException($"Second param 'b' is an unknown SpanString type '{b?.GetType().Name}', is this a bug?");
         }
 
-        throw new ArgumentException($"First param 'a' is an unknown SpanString type '{a.GetType().Name}', is this a bug?");
+        throw new ArgumentException($"First param 'a' is an unknown SpanString type '{a?.GetType().Name}', is this a bug?");
     }
 
     /// <summary>
