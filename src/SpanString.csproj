@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SpanString.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>OptimizedStrings</RootNamespace>
@@ -10,13 +10,11 @@
     <IncludeSymbols>true</IncludeSymbols> 
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>0.1.0</Version>
-    <Authors>Erik Mavrinac, https://github.com/erikma</Authors>
+    <Version>0.2.0</Version>
+    <Authors>Erik Mavrinac</Authors>
     <Company />
-    <Description>SpanString is an optimized string data structure built from Memory&lt;char&gt; and Span&lt;char&gt; added in .NET Standard 2.1+ and .NET Core 3.0+. It allows you to gather string segments from the memory of other strings to act as a single string. This can be useful for applications where millions of strings are parsed and used as keys for dictionaries or other data structures, and memory pressure and GC overhead are an important concerns.
-
-SpanString always uses ordinal string comparisons, and currently only handles ANSI for OrdinalIgnoreCase comparisons.</Description>
-    <Copyright>Copyright (c) Erik Mavrinac, https://github.com/erikma</Copyright>
+    <Description>An optimized string data structure built from Memory&lt;char&gt; and Span&lt;char&gt; to reduce GC.</Description>
+    <Copyright>Copyright (c) Erik Mavrinac</Copyright>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/erikma/SpanString</PackageProjectUrl>
     <RepositoryUrl>https://github.com/erikma/SpanString.git</RepositoryUrl>
@@ -25,6 +23,7 @@ SpanString always uses ordinal string comparisons, and currently only handles AN
     <PackageReleaseNotes>Initial release for testing performance and memory use versus strings in cases of reading and parsing millions of strings and creating substrings. Only contains SpanString1,2 allowing up to only 2 string segments to compose a SpanString.</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -40,10 +39,11 @@ SpanString always uses ordinal string comparisons, and currently only handles AN
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
